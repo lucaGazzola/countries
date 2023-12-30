@@ -1,5 +1,8 @@
 const http = require('http')
 const url = require('url')
+const fs = require('fs');
+const pathUtils = require('path');
+
 const getForCountry = require('./co2service')
 
 const server = http.createServer((req, res) => {
@@ -17,7 +20,27 @@ const server = http.createServer((req, res) => {
             })
             res.end(JSON.stringify({ error: 'Invalid parameter' }))
         }
-    } else {
+    } else if (path === '/'){
+        fs.readFile(pathUtils.join(__dirname, 'index.html'), (err, data) => {
+            if (err) {
+                res.writeHead(500);
+                res.end('Error loading index.html');
+            } else {
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.end(data);
+            }
+        });
+    }else if (req.url.match(/\.js$/)) {
+        fs.readFile(pathUtils.join(__dirname, req.url), (err, data) => {
+            if (err) {
+                res.writeHead(500);
+                res.end('Error loading JavaScript file');
+            } else {
+                res.writeHead(200, {'Content-Type': 'application/javascript'});
+                res.end(data);
+            }
+        });
+    }else {
         res.writeHead(404, {
             'Content-type': 'text/html'
         })
