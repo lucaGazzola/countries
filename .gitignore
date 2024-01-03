@@ -77,4 +77,4 @@ dist
 .dynamodb/
 
 # Local conf
-config.js
+.env

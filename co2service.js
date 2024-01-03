@@ -1,5 +1,8 @@
 const https = require('https');
-const config = require('./config');
+require('dotenv').config();
+const config = {
+    apiKey: process.env.API_KEY,
+};
 
 function makeExternalRequest(options, res) {
     const request = https.request(options, response => {
@@ -34,7 +37,7 @@ function getForCountry(country, res) {
         path: `/v1/latest?countryCode=${country}`,
         method: 'GET',
         headers: {
-            'auth-token': config.authToken
+            'auth-token': config.apiKey
         }
     }
 
