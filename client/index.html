@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CO2 Emissions Data</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CO2 Emissions Data</h1>
+        <form id="country-form">
+            <label for="country">Country Code:</label>
+            <input type="text" id="country" name="country" required>
+            <button type="submit">Get Data</button>
+        </form>
+        <div id="result"></div>
+        <div id="fossil-fuel">
+            <label for="fossil-fuel-bar">Fossil Fuel Percentage:</label>
+            <progress id="fossil-fuel-bar" value="0" max="100"></progress>
+            <span id="fossil-fuel-percentage"></span>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

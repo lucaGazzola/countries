@@ -16,4 +16,8 @@ describe('/getForCountry endpoint', () => {
     const response = await request(server).get('/getForCountry');
     expect(response.statusCode).toBe(400);
   });
+
+  afterAll(done => {
+    server.close(done); // Close the server after running the tests
+  });
 });

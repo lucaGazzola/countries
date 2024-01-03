@@ -6,11 +6,13 @@ document.getElementById('country-form').addEventListener('submit', function(even
         .then(response => response.json())
         .then(data => {
             const dataInfo = data.data;
-            document.getElementById('data').innerText = 
+            document.getElementById('result').innerText = 
                 `Country Code: ${data.countryCode}\n` +
                 `Datetime: ${dataInfo.datetime}\n` +
-                `Carbon Intensity: ${dataInfo.carbonIntensity} ${data.units.carbonIntensity}\n` +
-                `Fossil Fuel Percentage: ${dataInfo.fossilFuelPercentage}%`;
+                `Carbon Intensity: ${dataInfo.carbonIntensity} ${data.units.carbonIntensity}`;
+                document.getElementById('fossil-fuel-bar').value = dataInfo.fossilFuelPercentage;
+                document.getElementById('fossil-fuel-percentage').textContent = `${dataInfo.fossilFuelPercentage}%`; 
+                document.getElementById('fossil-fuel').style.display = 'block';
         })
         .catch(error => {
             console.error('Error:', error);

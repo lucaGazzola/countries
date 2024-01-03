@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#country-form {
+    margin-bottom: 20px;
+}
+
+#country-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#country-form input, #country-form button {
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#country-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#result {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+#fossil-fuel {
+    display: none;
+    margin-top: 20px;
+}
+
+#fossil-fuel-bar {
+    width: 100%;
+}
+
+#fossil-fuel-percentage {
+    margin-left: 10px;
+}
