@@ -6,9 +6,10 @@ document.getElementById('country-form').addEventListener('submit', function(even
         .then(response => response.json())
         .then(data => {
             const dataInfo = data.data;
+            const datetime = new Date(dataInfo.datetime).toLocaleString();
             document.getElementById('result').innerText = 
                 `Country Code: ${data.countryCode}\n` +
-                `Datetime: ${dataInfo.datetime}\n` +
+                `Datetime: ${datetime}\n` +
                 `Carbon Intensity: ${dataInfo.carbonIntensity} ${data.units.carbonIntensity}`;
                 document.getElementById('fossil-fuel-bar').value = dataInfo.fossilFuelPercentage;
                 document.getElementById('fossil-fuel-percentage').textContent = `${dataInfo.fossilFuelPercentage}%`; 
