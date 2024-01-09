@@ -2,36 +2,34 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 800px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
 }
 
 h1 {
     color: #333;
-    font-size: 2em;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 #country-form {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 #country-form label {
-    display: block;
-    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 1.2em;
 }
 
 #country-form input, #country-form button {
     padding: 10px;
-    margin-top: 5px;
-    width: 100%;
-    box-sizing: border-box;
+    font-size: 1em;
 }
 
 #country-form button {
@@ -39,27 +37,21 @@ h1 {
     color: #fff;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
 }
 
-#result {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
-    color: #333;
-    font-size: 1.2em;
+.content {
+    display: flex;
+    justify-content: space-between;
 }
 
-#fossil-fuel {
-    display: none;
-    margin-top: 20px;
+#flag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-#fossil-fuel-bar {
-    width: 100%;
-}
-
-#fossil-fuel-percentage {
-    margin-left: 10px;
+#flag img {
+    max-width: 100%;
+    height: auto;
 }
