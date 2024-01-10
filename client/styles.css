@@ -1,13 +1,5 @@
-body {
-    background-color: #f4f4f4;
-}
-
-#map {
-    height: 80vh;
-    width: 100%;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+body, html, #map {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
